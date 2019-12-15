@@ -55,4 +55,4 @@ if applicable and notifying the user if we are switching to a new entry"
       (when (entry-is-now (nth aentries index))
         (highlight index))
       (when (just-entered (nth aentries index))
-        (notify index)))))
+        (notify (nth aentries index))))))
