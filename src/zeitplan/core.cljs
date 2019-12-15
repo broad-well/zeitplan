@@ -12,6 +12,8 @@
 
 (enable-console-print!)
 
+(.requestPermission js/Notification)
+
 (defn render []
   (clear-items)
   (see-zeitplan render-item))
