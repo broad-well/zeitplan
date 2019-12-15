@@ -8,7 +8,7 @@ a Zeitplan object and modifies it by appending the given time entry"
   (let [update-func #(conj % time-entry)]
     #(update % :entries update-func)))
 
-(def current-zeitplan (atom (types/Zeitplan. 0 (list))))
+(def current-zeitplan (atom (types/Zeitplan. 0 [])))
 
 (defn append-time-entry [time-entry]
   (swap! current-zeitplan (append-time-entry-swap time-entry)))

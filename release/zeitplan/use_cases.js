@@ -17,7 +17,7 @@ return cljs.core.update.cljs$core$IFn$_invoke$arity$3(p1__1859_SHARP_,cljs.core.
 });
 ;})(update_func))
 });
-zeitplan.use_cases.current_zeitplan = cljs.core.atom.cljs$core$IFn$_invoke$arity$1((new zeitplan.types.Zeitplan((0),cljs.core.List.EMPTY,null,null,null)));
+zeitplan.use_cases.current_zeitplan = cljs.core.atom.cljs$core$IFn$_invoke$arity$1((new zeitplan.types.Zeitplan((0),cljs.core.PersistentVector.EMPTY,null,null,null)));
 zeitplan.use_cases.append_time_entry = (function zeitplan$use_cases$append_time_entry(time_entry){
 return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(zeitplan.use_cases.current_zeitplan,zeitplan.use_cases.append_time_entry_swap(time_entry));
 });
