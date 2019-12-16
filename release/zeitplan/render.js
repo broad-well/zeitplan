@@ -42,8 +42,70 @@ return ((hours * (60)) + minutes);
 });
 zeitplan.render.highlight_nth = (function zeitplan$render$highlight_nth(n){
 var element = document.querySelector("#zeitplan");
-var child = cljs.core.nth.cljs$core$IFn$_invoke$arity$2(cljs.core.array_seq.cljs$core$IFn$_invoke$arity$1(element.children),n);
-return child.classList.add("active");
+var children = cljs.core.array_seq.cljs$core$IFn$_invoke$arity$1(element.children);
+var seq__1809 = cljs.core.seq(cljs.core.range.cljs$core$IFn$_invoke$arity$1(cljs.core.count(children)));
+var chunk__1810 = null;
+var count__1811 = (0);
+var i__1812 = (0);
+while(true){
+if((i__1812 < count__1811)){
+var index = chunk__1810.cljs$core$IIndexed$_nth$arity$2(null,i__1812);
+if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(n,index)){
+cljs.core.nth.cljs$core$IFn$_invoke$arity$2(children,index).classList.add("active");
+} else {
+cljs.core.nth.cljs$core$IFn$_invoke$arity$2(children,index).classList.remove("active");
+}
+
+
+var G__1813 = seq__1809;
+var G__1814 = chunk__1810;
+var G__1815 = count__1811;
+var G__1816 = (i__1812 + (1));
+seq__1809 = G__1813;
+chunk__1810 = G__1814;
+count__1811 = G__1815;
+i__1812 = G__1816;
+continue;
+} else {
+var temp__5457__auto__ = cljs.core.seq(seq__1809);
+if(temp__5457__auto__){
+var seq__1809__$1 = temp__5457__auto__;
+if(cljs.core.chunked_seq_QMARK_(seq__1809__$1)){
+var c__4351__auto__ = cljs.core.chunk_first(seq__1809__$1);
+var G__1817 = cljs.core.chunk_rest(seq__1809__$1);
+var G__1818 = c__4351__auto__;
+var G__1819 = cljs.core.count(c__4351__auto__);
+var G__1820 = (0);
+seq__1809 = G__1817;
+chunk__1810 = G__1818;
+count__1811 = G__1819;
+i__1812 = G__1820;
+continue;
+} else {
+var index = cljs.core.first(seq__1809__$1);
+if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(n,index)){
+cljs.core.nth.cljs$core$IFn$_invoke$arity$2(children,index).classList.add("active");
+} else {
+cljs.core.nth.cljs$core$IFn$_invoke$arity$2(children,index).classList.remove("active");
+}
+
+
+var G__1821 = cljs.core.next(seq__1809__$1);
+var G__1822 = null;
+var G__1823 = (0);
+var G__1824 = (0);
+seq__1809 = G__1821;
+chunk__1810 = G__1822;
+count__1811 = G__1823;
+i__1812 = G__1824;
+continue;
+}
+} else {
+return null;
+}
+}
+break;
+}
 });
 zeitplan.render.notify = (function zeitplan$render$notify(aentry){
 var start_time = zeitplan.render.format_time(cljs.core.cst$kw$start_DASH_time.cljs$core$IFn$_invoke$arity$1(aentry));

@@ -49,8 +49,12 @@
 
 (defn highlight-nth [n]
   (let [element (.querySelector js/document "#zeitplan")
-        child (nth (array-seq (.-children element)) n)]
-    (-> child (.-classList) (.add "active"))))
+        children (array-seq (.-children element))]
+    (doseq [index (range (count children))]
+      (if (= n index)
+        (-> (nth children index) (.-classList) (.add "active"))
+        (-> (nth children index) (.-classList) (.remove "active"))))))
+;(-> child (.-classList) (.add "active"))
 
 (defn notify [aentry]
   (let [start-time (format-time (:start-time aentry))
