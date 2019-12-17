@@ -1,14 +1,14 @@
 # zeitplan
 
-FIXME: Write a one-line description of your library/project.
+A precise timetable of tasks for the German within every one of us.
 
-## Overview
+## Description
 
-FIXME: Write a paragraph about the library/project and highlight its goals.
+_Zeitplan_ is a simple webpage that keeps track of your tasks down to the minute. To set it up, you add individual tasks with durations to the timetable, adjusting the start time if necessary. Once it has been set up, _Zeitplan_ will notify the user when a new task has started; it will also highlight the currently active task in the timetable.
 
 ## Setup
 
-Most of the following scripts require [rlwrap](http://utopia.knoware.nl/~hlub/uck/rlwrap/) (on OS X installable via brew).
+Most of the following scripts require `rlwrap` (on OS X installable via brew).
 
 Build your project once in dev mode with the following script and then open `index.html` in your browser.
 
@@ -49,8 +49,10 @@ Build a single release artifact with the following script and then open `index_r
 
     ./scripts/release
 
+## Why is there compiled JS in the repo?
+
+Because this repo is directly connected to Netlify, which hosts it on https://zeitplan.netlify.com. Maybe I can eventually figure out how to have Netlify build it instead.
+
 ## License
 
-Copyright © 2016 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
+Distributed under the MIT License.
